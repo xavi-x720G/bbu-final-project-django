@@ -1,0 +1,325 @@
+/* Build Bright University (BBU) - Cyberpunk Dark Neon Theme */
+
+:root {
+    --bbu-primary: #1e3c72;
+    --bbu-secondary: #2a5298;
+    --bbu-accent: #667eea;
+    --bbu-gold: #f6d365;
+
+    /* Cyberpunk palette */
+    --cy-bg: #07070f;
+    --cy-panel: #11112a;
+    --cy-panel-2: #181838;
+    --cy-cyan: #00f0ff;
+    --cy-pink: #ff2bd6;
+    --cy-purple: #9d4dff;
+    --cy-green: #39ff88;
+    --cy-yellow: #f9f002;
+    --cy-red: #ff3b5c;
+    --cy-text: #e6e6ff;
+    --cy-muted: #8f94c0;
+    --cy-border: rgba(0, 240, 255, 0.28);
+}
+
+/* ---------- Base ---------- */
+body {
+    font-family: "Rajdhani", "Kantumruy Pro", "Battambang", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 1.05rem;
+    background-color: var(--cy-bg);
+    background-image:
+        linear-gradient(rgba(0, 240, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.045) 1px, transparent 1px),
+        radial-gradient(circle at 15% 0%, rgba(255, 43, 214, 0.18), transparent 45%),
+        radial-gradient(circle at 90% 20%, rgba(0, 240, 255, 0.14), transparent 40%);
+    background-size: 40px 40px, 40px 40px, auto, auto;
+    background-attachment: fixed;
+    color: var(--cy-text);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: "Orbitron", "Kantumruy Pro", "Battambang", sans-serif;
+    letter-spacing: 0.03em;
+    color: var(--cy-text);
+}
+
+a { color: var(--cy-cyan); text-decoration: none; }
+a:hover { color: var(--cy-pink); text-shadow: 0 0 8px var(--cy-pink); }
+
+::selection { background: var(--cy-pink); color: #fff; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--cy-bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--cy-cyan), var(--cy-pink)); border-radius: 6px; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background: rgba(7, 7, 15, 0.92) !important;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--cy-cyan);
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.35), 0 2px 30px rgba(255, 43, 214, 0.15);
+}
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--cy-cyan) !important;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+}
+.navbar .nav-link {
+    color: var(--cy-text) !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+    transition: color .2s, text-shadow .2s;
+}
+.navbar .nav-link:hover {
+    color: var(--cy-pink) !important;
+    text-shadow: 0 0 10px var(--cy-pink);
+}
+.navbar .btn-outline-light {
+    border-color: var(--cy-cyan);
+    color: var(--cy-cyan) !important;
+}
+.navbar .btn-outline-light:hover {
+    background: var(--cy-cyan);
+    color: #000 !important;
+    box-shadow: 0 0 14px var(--cy-cyan);
+}
+.navbar .btn-light {
+    background: linear-gradient(135deg, var(--cy-pink), var(--cy-purple));
+    color: #fff !important;
+    border: none;
+    box-shadow: 0 0 14px rgba(255, 43, 214, 0.6);
+}
+.dropdown-menu {
+    background: var(--cy-panel);
+    border: 1px solid var(--cy-border);
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.25);
+}
+.dropdown-item { color: var(--cy-text); }
+.dropdown-item:hover { background: rgba(0, 240, 255, 0.12); color: var(--cy-cyan); }
+
+/* ---------- Hero / panels ---------- */
+.cyber-hero {
+    background: linear-gradient(135deg, rgba(17, 17, 42, 0.95), rgba(40, 10, 60, 0.85));
+    border: 1px solid var(--cy-pink);
+    box-shadow: 0 0 24px rgba(255, 43, 214, 0.35), inset 0 0 30px rgba(0, 240, 255, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+.cyber-hero::after {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 0; height: 3px;
+    background: linear-gradient(90deg, var(--cy-cyan), var(--cy-pink), var(--cy-yellow));
+}
+.cyber-hero h1 {
+    color: var(--cy-cyan);
+    text-shadow: 0 0 14px rgba(0, 240, 255, 0.9), 2px 2px 0 rgba(255, 43, 214, 0.7);
+}
+.cyber-hero hr { border-color: var(--cy-border); opacity: 1; }
+
+.cyber-panel {
+    background: var(--cy-panel) !important;
+    border: 1px solid var(--cy-border) !important;
+    box-shadow: 0 0 20px rgba(157, 77, 255, 0.25) !important;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: var(--cy-panel);
+    color: var(--cy-text);
+    border: 1px solid var(--cy-border);
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.12);
+    margin-bottom: 20px;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover {
+    transform: translateY(-2px);
+    border-color: var(--cy-cyan);
+    box-shadow: 0 0 22px rgba(0, 240, 255, 0.35);
+}
+.card-header, .card-footer {
+    background: rgba(0, 240, 255, 0.06);
+    border-color: var(--cy-border);
+}
+.card-bbu {
+    background: var(--cy-panel);
+    border: 1px solid var(--cy-border);
+    border-radius: 10px;
+}
+
+/* Bootstrap light utilities turned dark so existing pages stay readable */
+.bg-white, .bg-light { background-color: var(--cy-panel-2) !important; color: var(--cy-text) !important; }
+.text-dark { color: var(--cy-text) !important; }
+.text-muted, .text-secondary { color: var(--cy-muted) !important; }
+.text-primary { color: var(--cy-cyan) !important; text-shadow: 0 0 10px rgba(0, 240, 255, 0.6); }
+.text-success { color: var(--cy-green) !important; text-shadow: 0 0 10px rgba(57, 255, 136, 0.55); }
+.text-info    { color: var(--cy-purple) !important; text-shadow: 0 0 10px rgba(157, 77, 255, 0.6); }
+.text-warning { color: var(--cy-yellow) !important; }
+.border, .border-bottom, .border-top { border-color: var(--cy-border) !important; }
+code { color: var(--cy-yellow); background: rgba(249, 240, 2, 0.08); padding: 1px 6px; border-radius: 4px; }
+hr { border-color: var(--cy-border); }
+
+/* ---------- Buttons ---------- */
+.btn { border-radius: 6px; font-weight: 600; letter-spacing: 0.04em; transition: all .2s ease; }
+.btn-primary {
+    background: transparent; color: var(--cy-cyan);
+    border: 1px solid var(--cy-cyan);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.35);
+}
+.btn-primary:hover, .btn-primary:focus {
+    background: var(--cy-cyan); color: #000; border-color: var(--cy-cyan);
+    box-shadow: 0 0 18px var(--cy-cyan);
+}
+.btn-success { background: transparent; color: var(--cy-green); border: 1px solid var(--cy-green); box-shadow: 0 0 8px rgba(57,255,136,.35); }
+.btn-success:hover { background: var(--cy-green); color: #000; border-color: var(--cy-green); box-shadow: 0 0 18px var(--cy-green); }
+.btn-info { background: transparent; color: var(--cy-purple); border: 1px solid var(--cy-purple); box-shadow: 0 0 8px rgba(157,77,255,.4); }
+.btn-info:hover { background: var(--cy-purple); color: #fff; border-color: var(--cy-purple); box-shadow: 0 0 18px var(--cy-purple); }
+.btn-warning { background: transparent; color: var(--cy-yellow); border: 1px solid var(--cy-yellow); box-shadow: 0 0 8px rgba(249,240,2,.3); }
+.btn-warning:hover { background: var(--cy-yellow); color: #000; border-color: var(--cy-yellow); box-shadow: 0 0 18px var(--cy-yellow); }
+.btn-danger { background: transparent; color: var(--cy-red); border: 1px solid var(--cy-red); box-shadow: 0 0 8px rgba(255,59,92,.35); }
+.btn-danger:hover { background: var(--cy-red); color: #fff; border-color: var(--cy-red); box-shadow: 0 0 18px var(--cy-red); }
+.btn-dark { background: var(--cy-pink); color: #fff; border: 1px solid var(--cy-pink); box-shadow: 0 0 10px rgba(255,43,214,.5); }
+.btn-outline-secondary { color: var(--cy-muted); border-color: var(--cy-muted); }
+.btn-outline-secondary:hover { background: var(--cy-muted); color: #000; }
+
+/* ---------- Tables ---------- */
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--cy-text);
+    --bs-table-border-color: rgba(0, 240, 255, 0.18);
+    --bs-table-striped-bg: rgba(0, 240, 255, 0.04);
+    --bs-table-striped-color: var(--cy-text);
+    --bs-table-hover-bg: rgba(255, 43, 214, 0.10);
+    --bs-table-hover-color: #fff;
+}
+.table-light, .table-dark, thead.table-light th, thead.table-dark th {
+    --bs-table-bg: #1a1a40;
+    --bs-table-color: var(--cy-cyan);
+    --bs-table-border-color: var(--cy-border);
+    color: var(--cy-cyan) !important;
+    text-transform: uppercase;
+    font-family: "Orbitron", "Kantumruy Pro", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+}
+.table-hover tbody tr:hover { background-color: rgba(255, 43, 214, 0.10); }
+
+/* ---------- Forms ---------- */
+.form-control, .form-select, .input-group-text {
+    background-color: #0c0c20;
+    color: var(--cy-text);
+    border: 1px solid var(--cy-border);
+}
+.form-control::placeholder { color: var(--cy-muted); }
+.form-control:focus, .form-select:focus {
+    background-color: #0c0c20;
+    color: #fff;
+    border-color: var(--cy-cyan);
+    box-shadow: 0 0 0 .2rem rgba(0, 240, 255, 0.22), 0 0 14px rgba(0, 240, 255, 0.35);
+}
+.form-label { color: var(--cy-cyan); font-weight: 600; }
+.form-text { color: var(--cy-muted); }
+
+/* Tom Select (searchable dropdown) */
+.ts-control, .ts-wrapper.single .ts-control, .ts-wrapper.multi .ts-control {
+    background: #0c0c20 !important; color: var(--cy-text) !important;
+    border: 1px solid var(--cy-border) !important; box-shadow: none !important;
+}
+.ts-control input, .ts-control .item { color: var(--cy-text) !important; }
+.ts-wrapper.focus .ts-control { border-color: var(--cy-cyan) !important; box-shadow: 0 0 12px rgba(0,240,255,.35) !important; }
+.ts-dropdown, .ts-dropdown.form-control {
+    background: var(--cy-panel) !important; color: var(--cy-text) !important;
+    border: 1px solid var(--cy-cyan) !important;
+}
+.ts-dropdown .option { color: var(--cy-text) !important; }
+.ts-dropdown .active, .ts-dropdown .option:hover { background: rgba(0, 240, 255, 0.15) !important; color: var(--cy-cyan) !important; }
+
+/* ---------- Alerts / badges / lists ---------- */
+.alert { background: var(--cy-panel-2); color: var(--cy-text); border: 1px solid var(--cy-border); }
+.alert-info    { border-color: var(--cy-cyan);   box-shadow: 0 0 12px rgba(0,240,255,.25); }
+.alert-success { border-color: var(--cy-green);  box-shadow: 0 0 12px rgba(57,255,136,.25); }
+.alert-warning { border-color: var(--cy-yellow); box-shadow: 0 0 12px rgba(249,240,2,.2); }
+.alert-danger  { border-color: var(--cy-red);    box-shadow: 0 0 12px rgba(255,59,92,.25); }
+.alert-info h5, .alert-info li { color: var(--cy-text); }
+
+.badge { font-weight: 600; letter-spacing: .04em; }
+.badge.bg-primary   { background: var(--cy-cyan) !important;   color: #000 !important; }
+.badge.bg-success   { background: var(--cy-green) !important;  color: #000 !important; }
+.badge.bg-warning   { background: var(--cy-yellow) !important; color: #000 !important; }
+.badge.bg-info      { background: var(--cy-purple) !important; color: #fff !important; }
+.badge.bg-danger    { background: var(--cy-red) !important;    color: #fff !important; }
+.badge.bg-secondary { background: #3a3a66 !important;          color: var(--cy-text) !important; }
+.badge.bg-dark      { background: var(--cy-pink) !important;   color: #fff !important; }
+
+.list-group-item { background: var(--cy-panel); color: var(--cy-text); border-color: var(--cy-border); }
+.pagination .page-link { background: var(--cy-panel); color: var(--cy-cyan); border-color: var(--cy-border); }
+.pagination .active .page-link { background: var(--cy-cyan); color: #000; border-color: var(--cy-cyan); }
+
+/* ---------- Student avatars ---------- */
+.student-avatar-thumb {
+    width: 44px; height: 44px; object-fit: cover; border-radius: 50%;
+    border: 2px solid var(--cy-cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+}
+.student-avatar-placeholder {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background-color: var(--cy-panel-2); color: var(--cy-cyan);
+    border: 2px solid var(--cy-pink);
+    font-size: 1.1rem; font-weight: 600;
+}
+
+/* Custom Gradient Header (kept for existing pages) */
+.bbu-gradient-header {
+    background: linear-gradient(135deg, #1a0b3d 0%, #3a0a5c 100%);
+    color: #ffffff;
+    border-bottom: 2px solid var(--cy-pink);
+}
+
+/* ---------- Footer ---------- */
+.cyber-footer {
+    background: rgba(7, 7, 15, 0.95);
+    border-top: 1px solid var(--cy-pink);
+    box-shadow: 0 -4px 24px rgba(255, 43, 214, 0.25);
+    color: var(--cy-muted);
+    letter-spacing: 0.05em;
+}
+
+/* Gentle neon pulse on the brand; switched off for people who prefer less motion */
+@keyframes neonPulse {
+    0%, 100% { text-shadow: 0 0 6px rgba(0, 240, 255, .6); }
+    50%      { text-shadow: 0 0 16px rgba(0, 240, 255, 1), 0 0 28px rgba(255, 43, 214, .55); }
+}
+.navbar-brand { animation: neonPulse 3.5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+    .navbar-brand { animation: none; }
+    .card, .btn { transition: none; }
+}
+
+/* Name tag in the navbar and identity tag in the hero */
+.brand-owner {
+    font-family: "Orbitron", "Kantumruy Pro", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #000;
+    background: linear-gradient(135deg, var(--cy-cyan), var(--cy-pink));
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-shadow: none;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.55);
+    vertical-align: middle;
+}
+.cyber-tag {
+    display: inline-block;
+    font-family: "Orbitron", "Kantumruy Pro", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    color: var(--cy-pink);
+    border: 1px solid var(--cy-pink);
+    padding: 4px 12px;
+    border-radius: 3px;
+    box-shadow: 0 0 12px rgba(255, 43, 214, 0.45);
+}

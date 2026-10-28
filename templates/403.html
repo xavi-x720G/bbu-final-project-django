@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}403 Forbidden - Access Denied{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center my-5">
+    <div class="col-md-8 col-lg-6 text-center">
+        <div class="card shadow-sm border-0 p-5">
+            <div class="mb-4">
+                <span style="font-size: 4rem;">🔒</span>
+            </div>
+            <h1 class="display-6 fw-bold text-danger mb-2">403 - ការអនុញ្ញាតត្រូវបានបដិសេធ</h1>
+            <h4 class="text-secondary mb-3">Access Forbidden / Access Denied</h4>
+            <p class="text-muted mb-4">
+                {{ exception|default:"អ្នកមិនមានសិទ្ធិគ្រប់គ្រាន់ដើម្បីចូលមើល កែប្រែ ឬលុបទិន្នន័យនេះឡើយ។ ប្រសិនបើអ្នកជានិស្សិត អ្នកអាចមើលនិងកែប្រែបានតែប្រវត្តិរូបផ្ទាល់ខ្លួនរបស់អ្នកប៉ុណ្ណោះ។" }}
+            </p>
+            <p class="small text-muted mb-4">
+                You do not have permission to access, edit, or delete this record. Student accounts can only manage their own profile.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                {% if user.is_authenticated and user.student %}
+                <a href="{% url 'students:student_detail' user.student.pk %}" class="btn btn-primary px-4">
+                    👤 ទៅកាន់ប្រវត្តិរូបខ្ញុំ (My Profile)
+                </a>
+                {% endif %}
+                <a href="{% url 'home' %}" class="btn btn-outline-secondary px-4">
+                    🏠 ទំព័រដើម (Home)
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
